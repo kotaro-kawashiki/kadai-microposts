@@ -23,5 +23,9 @@ class UsersController extends Controller
         return view('users.show', [
             'user' => $user,
         ]);
+        
+          $data += $this->counts($user);
+
+        return view('users.show', $data);
     }
 }
