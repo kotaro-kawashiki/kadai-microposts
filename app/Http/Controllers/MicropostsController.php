@@ -13,6 +13,7 @@ class MicropostsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+   
     public function index()
     {
         $data = [];
@@ -44,16 +45,14 @@ class MicropostsController extends Controller
         return redirect('/');
     }
     
-    public function store(Request $request)
+    public function destroy($id)
     {
-        $this->validate($request, [
-            'content' => 'required|max:191',
-        ]);
+        $micropost = \App\Micropost::find($id);
 
-        $request->user()->microposts()->create([
-            'content' => $request->content,
-        ]);
+        if (\Auth::user()->id === $micropost->user_id) {
+            $micropost->delete();
+        }
 
-        return redirect('/');
+        return redirect()->back();
     }
 }
