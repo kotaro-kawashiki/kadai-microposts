@@ -22,4 +22,6 @@ abstract class Controller extends BaseController
             'count_followers' => $count_followers,
         ];
     }
+    
+    
 }
