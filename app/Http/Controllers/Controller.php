@@ -10,4 +10,28 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+    
+    public function counts($user) {
+        $count_microposts = $user->microposts()->count();
+        $count_followings = $user->followings()->count();
+        $count_followers = $user->followers()->count();
+        $count_favorites = $user->favoritings()->count();
+        
+        
+        
+        return [
+            'count_microposts' => $count_microposts,
+            'count_followings' => $count_followings,
+            'count_followers' => $count_followers,
+            'count_favorites' => $count_favorites,
+        ];
+    }
+//   public function count_favorites($micropsost){
+    //   $count_favorited = $micropost->being_favorited()->count();
+       
+    //   return [
+        //   'count_favorited' => $count_favorited, 
+        //   ];
+//   }
 }
+ 

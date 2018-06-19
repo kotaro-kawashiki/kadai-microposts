@@ -26,6 +26,8 @@ class MicropostsController extends Controller
                 'microposts' => $microposts,
             ];
             
+            // $data += $this->count_favorited($micropost);
+            
         }
             return view('welcome',$data);
      
