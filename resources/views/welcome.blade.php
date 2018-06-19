@@ -6,7 +6,7 @@
                       {!! Form::open(['route' => 'microposts.store']) !!}
                           <div class="form-group">
                               {!! Form::textarea('content', old('content'), ['class' => 'form-control', 'rows' => '2','placeholder' => 'how do you feel?']) !!}
-                              {!! Form::submit('Post', ['class' => 'btn btn-primary btn-block']) !!}
+                              {!! Form::submit('Post', ['class' => 'btn btn-success btn-block']) !!}
                           </div>
                       {!! Form::close() !!}
      @endif
@@ -21,7 +21,7 @@
         </div>
     @else
         <div class="center jumbotron">
-            <div class="text-center"><div id="my-element" style="transform: translate(0px) rotate(10deg);">
+            <div class="text-center"><div id="my-element">
                <h1>Welcome to the Microposts</h1>
             </div>
                

@@ -8,7 +8,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <h1><a class="navbar-brand" href="/" style="color:black; font-size:120%;">Taroposts</a></h1>
+                
+                
+                <div style="margin-bottom:13;"></div>
+                <b><a class="navbar-brand" href="/" style="color:black; font-size:200%;transform: translate(0px) rotate(10deg); margin-top:13px;">Taroposts</a></b>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right pager">
@@ -21,7 +24,7 @@
                                 <li>{!! link_to_route('users.show', 'Myprofile', ['id' => Auth::user()->id]) !!}</li>
                                 <li>{!! link_to_route('users.favorites', 'Favorites', ['id' => Auth::user()->id]) !!}</li>
                                 <li role="separator" class="divider"></li>
-                                <li>{!! link_to_route('logout.get', 'Logout') !!}</li>
+                                <li>{!! link_to_route('logout.get', 'Logout',['class' => 'btn btn-warning']) !!}</li>
                             </ul>
                         </li>
                     @else
