@@ -11,11 +11,14 @@
                 
                 
                 <div style="margin-bottom:13;"></div>
-                <b><a class="navbar-brand" href="/" style="color:black; font-size:200%;transform: translate(0px) rotate(10deg); margin-top:13px;">Taroposts</a></b>
+                <b><a class="navbar-brand text-muted" href="/" style="color:black; font-size:200%;transform: translate(0px) rotate(10deg); margin-top:13px;">Taroposts</a></b>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right pager">
                     @if (Auth::check())
+                        <li>
+                            
+                        </li>
                         <li>{!! link_to_route('users.index', 'Users', ['class' => 'btn-secondary']) !!}</li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
