@@ -12,7 +12,7 @@ class UsersController extends Controller
 {
     public function index()
     {
-         $users = User::paginate(10);
+         $users = User::paginate(40);
         
         return view('users.index', [
             'users' => $users,
@@ -21,7 +21,7 @@ class UsersController extends Controller
      public function show($id)
     {
          $user = User::find($id);
-        $microposts = $user->microposts()->orderBy('created_at', 'desc')->paginate(10);
+        $microposts = $user->microposts()->orderBy('created_at', 'desc')->paginate(40);
 
         $data = [
             'user' => $user,
@@ -36,7 +36,7 @@ class UsersController extends Controller
     public function followings($id)
     {
         $user = User::find($id);
-        $followings = $user->followings()->paginate(10);
+        $followings = $user->followings()->paginate(40);
 
         $data = [
             'user' => $user,
